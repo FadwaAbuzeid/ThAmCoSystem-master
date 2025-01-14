@@ -1,0 +1,11 @@
+@model ThreeAmigosWebApp.Models.Product
+
+<h1>@Model.Name</h1>
+<p>@Model.Description</p>
+<p><strong>Price:</strong> $@Model.Price</p>
+<p><strong>Stock:</strong> @Model.StockQuantity</p>
+
+<form method="post" action="/Cart/AddToCart">
+    <input type="hidden" name="productId" value="@Model.Id" />
+    <button type="submit" class="btn btn-success">Add to Cart</button>
+</form>

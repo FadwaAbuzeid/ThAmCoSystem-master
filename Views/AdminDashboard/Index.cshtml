@@ -1,0 +1,41 @@
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<ThreeAmigosWebApp.Controllers.UserWithRolesViewModel>
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard</h2>
+
+<a href="@Url.Action("AddUser", "AdminDashboard")" class="btn btn-success mb-3">Add User</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var userWithRoles in Model)
+        {
+            <tr>
+                <td>@userWithRoles.User.Email</td>
+                <td>@userWithRoles.User.PhoneNumber</td>
+                <td>@userWithRoles.User.Address</td>
+                <td>@string.Join(", ", userWithRoles.Roles)</td>
+                <td>
+                    <a href="@Url.Action("ManageUser", "AdminDashboard", new { id = userWithRoles.User.Id })" class="btn btn-primary">Manage</a>
+                    <form action="@Url.Action("DeleteUserConfirmed", "AdminDashboard", new { id = userWithRoles.User.Id })" method="post" style="display:inline-block;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

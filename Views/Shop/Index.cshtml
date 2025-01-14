@@ -1,0 +1,42 @@
+@model IEnumerable<ThreeAmigosWebApp.Models.Product>
+
+<div class="container mt-4">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Shop</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="category-filter p-3 bg-light rounded shadow-sm">
+                <h5 class="mb-3">Categories</h5>
+                @await Html.PartialAsync("_CategoryFilter")
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                @if (!Model.Any())
+                {
+                    <div class="col-12">
+                        <p class="text-muted text-center">No products found.</p>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var product in Model)
+                    {
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            @await Html.PartialAsync("_ProductCard", product)
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+@model ThreeAmigosWebApp.Controllers.ManageUserViewModel
+
+@{
+    ViewData["Title"] = "Manage User";
+}
+
+<h2>Manage User</h2>
+
+<div>
+    <p><strong>Email:</strong> @Model.User.Email</p>
+    <p><strong>Phone:</strong> @Model.User.PhoneNumber</p>
+    <p><strong>Address:</strong> @Model.User.Address</p>
+</div>
+<form asp-action="AddFunds" asp-controller="AdminDashboard" method="post">
+    <input type="hidden" name="userId" value="@Model.User.Id" />
+    <div class="form-group">
+        <label for="fundsAmount">Add Funds:</label>
+        <input type="number" name="fundsAmount" id="fundsAmount" class="form-control" min="0" step="0.01" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Funds</button>
+</form>
+
+<form asp-action="UpdateRoles" asp-controller="AdminDashboard" method="post">
+    <input type="hidden" name="userId" value="@Model.User.Id" />
+    <div class="form-group">
+        <label for="roles">Roles</label>
+        <select name="roles" id="roles" multiple class="form-control">
+            @foreach (var role in Model.AllRoles)
+            {
+                var optionTag = new TagBuilder("option");
+                optionTag.Attributes["value"] = role;
+                if (Model.Roles.Contains(role))
+                {
+                    optionTag.Attributes["selected"] = "selected";
+                }
+                optionTag.InnerHtml.Append(role);
+                @optionTag
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Roles</button>
+</form>

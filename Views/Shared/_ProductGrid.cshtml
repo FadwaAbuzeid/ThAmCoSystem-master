@@ -1,0 +1,10 @@
+@model IEnumerable<ThreeAmigosWebApp.Models.Product>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-3 mb-4">
+            @await Html.PartialAsync("_ProductCard", product)
+        </div>
+    }
+</div>

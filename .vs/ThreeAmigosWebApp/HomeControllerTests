@@ -1,0 +1,58 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Moq;
+using ThreeAmigosWebApp.Controllers;
+using ThreeAmigosWebApp.Models;
+using Xunit;
+
+public class HomeControllerTests
+{
+    private readonly Mock<ApplicationDbContext> _mockContext;
+    private readonly HomeController _controller;
+
+    public HomeControllerTests()
+    {
+        _mockContext = new Mock<ApplicationDbContext>();
+        _controller = new HomeController(_mockContext.Object);
+    }
+
+    [Fact]
+    public void Index_ReturnsViewResult_WithHomeViewModel()
+    {
+        // Arrange
+        var products = new List<Product>
+        {
+            new Product { Id = 1, Name = "Product 1", Price = 10.0m, StockQuantity = 20 },
+            new Product { Id = 2, Name = "Product 2", Price = 20.0m, StockQuantity = 15 },
+            new Product { Id = 3, Name = "Product 3", Price = 30.0m, StockQuantity = 5 }
+        }.AsQueryable();
+
+        var mockSet = new Mock<DbSet<Product>>();
+        mockSet.As<IQueryable<Product>>().Setup(m => m.Provider).Returns(products.Provider);
+        mockSet.As<IQueryable<Product>>().Setup(m => m.Expression).Returns(products.Expression);
+        mockSet.As<IQueryable<Product>>().Setup(m => m.ElementType).Returns(products.ElementType);
+        mockSet.As<IQueryable<Product>>().Setup(m => m.GetEnumerator()).Returns(products.GetEnumerator());
+
+        _mockContext.Setup(c => c.Products).Returns(mockSet.Object);
+
+        // Act
+        var result = _controller.Index();
+
+        // Assert
+        var viewResult = Assert.IsType<ViewResult>(result);
+        var model = Assert.IsType<HomeViewModel>(viewResult.Model);
+        Assert.Equal(3, model.FeaturedProducts.Count);
+        Assert.Equal(2, model.BestSellers.Count);
+        Assert.Equal(3, model.NewArrivals.Count);
+    }
+
+    [Fact]
+    public void About_ReturnsViewResult()
+    {
+        // Act
+        var result = _controller.About();
+
+        // Assert
+        var viewResult = Assert.IsType<ViewResult>(result);
+    }
+}

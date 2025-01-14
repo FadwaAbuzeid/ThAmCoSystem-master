@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ThreeAmigosWebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ThreeAmigosWebApp.26cvb1lvfd.bundle.scp.css"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\SeedData.cs",
+      "PackagePath": "staticwebassets\\SeedData.cs"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\img\\01.jpg",
+      "PackagePath": "staticwebassets\\img\\01.jpg"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\img\\02.jpg",
+      "PackagePath": "staticwebassets\\img\\02.jpg"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\img\\03 (2).jpg",
+      "PackagePath": "staticwebassets\\img\\03 (2).jpg"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\img\\bag.jpg",
+      "PackagePath": "staticwebassets\\img\\bag.jpg"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\img\\headphones.jpg",
+      "PackagePath": "staticwebassets\\img\\headphones.jpg"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\img\\laptop.jpg",
+      "PackagePath": "staticwebassets\\img\\laptop.jpg"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\img\\phone.jpg",
+      "PackagePath": "staticwebassets\\img\\phone.jpg"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\img\\shoes.jpg",
+      "PackagePath": "staticwebassets\\img\\shoes.jpg"
+    },
+    {
+      "Id": "c:\\Users\\fadwa\\OneDrive\\Desktop\\ThAmCoSystem-master\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ThreeAmigosWebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ThreeAmigosWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ThreeAmigosWebApp.props",
+      "PackagePath": "build\\ThreeAmigosWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ThreeAmigosWebApp.props",
+      "PackagePath": "buildMultiTargeting\\ThreeAmigosWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ThreeAmigosWebApp.props",
+      "PackagePath": "buildTransitive\\ThreeAmigosWebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,30 @@
+@model IEnumerable<ThreeAmigosWebApp.Controllers.UserWithRolesViewModel>
+
+<h2>Staff Dashboard - User List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var userWithRoles in Model)
+        {
+            <tr>
+                <td>@userWithRoles.User.UserName</td>
+                <td>
+                    @foreach (var role in userWithRoles.Roles)
+                    {
+                        <span>@role</span><br />
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("ViewCustomerProfile", "StaffDashboard", new { userId = userWithRoles.User.Id })" class="btn btn-info">View Profile</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

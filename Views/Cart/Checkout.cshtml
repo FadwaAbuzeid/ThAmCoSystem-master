@@ -1,0 +1,21 @@
+@model ThreeAmigosWebApp.Models.CheckoutViewModel
+
+<h2>Checkout</h2>
+
+<p><strong>Total Amount:</strong> @Model.TotalAmount.ToString("C")</p>
+<p><strong>Available Funds:</strong> @Model.AvailableFunds.ToString("C")</p>
+
+@if (Model.TotalAmount > Model.AvailableFunds)
+{
+    <p class="text-danger">You do not have enough funds to complete this purchase.</p>
+}
+else
+{
+    <form method="post">
+        <div class="form-group">
+            <label for="FundsToPay">Amount to Pay</label>
+            <input type="number" id="FundsToPay" class="form-control" value="@Model.TotalAmount" readonly />
+        </div>
+        <button type="submit" class="btn btn-primary">Pay Now</button>
+    </form>
+}

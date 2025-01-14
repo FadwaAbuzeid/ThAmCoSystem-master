@@ -1,0 +1,11 @@
+@model ThreeAmigosWebApp.Models.Product
+
+<div class="card product-card shadow-sm">
+    <img class="card-img-top product-image" src="~/img/@Model.ImageFileName" alt="@Model.Name">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text text-truncate" style="max-width: 200px;">@Model.Description</p>
+        <p class="price text-success font-weight-bold">$@Model.Price</p>
+        <a href="/Shop/Details/@Model.Id" class="btn btn-primary btn-block">View Product</a>
+    </div>
+</div>
